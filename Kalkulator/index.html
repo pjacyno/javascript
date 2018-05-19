@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang ="pl">
+	<head>
+	<title>Kalkulator</title>
+	<meta charset ="UTF-8">
+ 	</head>
+	
+	<body>
+	<center>
+	<h2>Kalkulator</h2>
+	
+	<form name="form1">
+		Wartość pierwsza:<input type="text" name="liczba1"><br><br>
+		Wartość druga: <input type="text" name="liczba2"><br><br>
+		
+		<input type="button" value="+" onClick="dodaj();"/>
+		<input type="button" value="-" onClick="odejmij();"/>
+		<input type="button" value="x" onClick="mnoz();"/>
+		<input type="button" value="/" onClick="dziel();"/>
+		<input type="button" value="reszta z dziel" onClick="reszt();"/>
+
+		<hr>
+		<input type="text" name = "wynik"/>
+		
+	</form>	
+ 		<script>
+		
+		function dodaj(){
+		document.form1.wynik.value = parseInt(document.form1.liczba1.value)+parseInt(document.form1.liczba2.value);
+		}
+		
+		function odejmij(){
+		document.form1.wynik.value = parseInt(document.form1.liczba1.value)-parseInt(document.form1.liczba2.value);
+		}
+		
+		function mnoz(){
+		document.form1.wynik.value = parseInt(document.form1.liczba1.value)*parseInt(document.form1.liczba2.value);
+		}
+		
+		function dziel(){
+		document.form1.wynik.value = parseInt(document.form1.liczba1.value)/parseInt(document.form1.liczba2.value);
+		}
+		
+		function reszt(){
+		document.form1.wynik.value = parseInt(document.form1.liczba1.value)%parseInt(document.form1.liczba2.value);
+		}
+ 		</script>
+		
+	</center>
+	</body>
+	</html>
+	
+	
