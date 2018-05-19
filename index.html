@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang ="pl">
+	<head>
+	<title>Przelicznik walut</title>
+	<meta charset ="UTF-8">
+ 	</head>
+	
+	<body>
+	
+	<form name="form1">
+	  Co chcesz przeliczyć:<input type="text" name="ile">
+	  <select name="co">
+	  <option value="pln" selected="selected">PLN</option>
+	  <option value="usd">USD</option>
+	  <option value="eur">EUR</option>
+	  </select>		
+		na
+	  <select name="naco">
+	  <option value="eur"selected="selected">EUR</option>
+	  <option value="pln" >PLN</option>
+	  <option value="usd">USD</option>
+	  </select>	<br><br>
+		
+	<input type="button" value="Przelicz jednostki" onClick="licz()"/>	<br><br>
+	
+	Wynik w przybliżeniu to: <input type="text" name = "wynik"/>
+
+				
+	</form>	
+	
+	<script type="text/javascript">
+	
+	function licz() 
+	
+{
+	var krok1;
+	var krok2;
+	var pln = 1.00;
+	var eur = 4.20;
+	var usd = 3.50;
+	
+	switch (form1.co.value)
+{
+	case "pln":
+    krok1 = form1.ile.value * pln;
+    break;
+
+	case "usd":
+    krok1 = form1.ile.value * usd;
+    break;
+
+	case "eur":
+    krok1 = form1.ile.value * eur;
+    break;
+}
+
+switch (form1.naco.value)
+{
+case "pln":
+krok2 = krok1/pln;
+break;
+
+case "usd":
+krok2 = krok1/usd;
+break;
+
+case "eur":
+krok2 = krok1/eur;
+break;
+
+}
+
+form1.wynik.value = Math.round(krok2*100)/100;
+
+}
+
+
+	
+	</script>
+		
+	</body>
+	</html>
+	
+	
