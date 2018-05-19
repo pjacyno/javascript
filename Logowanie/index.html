@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang ="pl">
+	<head>
+	<title>Logowanie</title>
+	<meta charset ="UTF-8">
+	<link rel ="stylesheet" href="styl.css" type ="text/css"/>
+	</head>
+	
+	<body>
+	<center>
+	<h2>Wprowadź login i hasło</h2>
+	
+	<form name="form1">
+		<table border="1">
+		<tr>
+		<td>Użytkownik:</td>
+		<td><input type="text" name="user"></td>
+		</tr>
+		
+		<tr>
+		<td>Hasło:</td>
+		<td><input type="password" name="pass"></td>
+		</tr>
+		<tr align="center">
+		<td colspan="2"><input type="button" value="Zaloguj" onClick="check();"></td>
+		</table>
+		
+	</form>
+
+	<script>
+		
+var users = new Array("user1", "user2", "user3");
+var passwords = new Array("kod1", "kod2", "kod3");
+function sprawdz_haslo(user, pass)
+{  
+  for (var i = 0; i < users.length; i++)
+  {
+    if((user == users[i]) && (pass == passwords[i]))
+      return true;
+  }
+  return false;
+}
+function check()
+{
+  var user = document.form1.user.value;
+  var pass = document.form1.pass.value;
+  if(!sprawdz_haslo(user, pass))
+  {
+      alert('Niepoprawne hasło!');
+  }
+  else
+  {
+    document.location.href = "mojastrona.html";
+  }
+}
+	
+		</script>
+	</center>
+	</body>
+	</html>
+	
+	
