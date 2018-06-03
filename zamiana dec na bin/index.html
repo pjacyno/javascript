@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang ="pl">
+	<head>
+	<title>Zamiana dec/bin</title>
+	<meta charset ="UTF-8">
+	</head>
+	
+	<body>
+	
+	
+	<script type="text/javascript">
+
+ var x=prompt("Podaj liczbę dziesiętną całkowitą");
+ 
+y=1;
+i=1;
+tablica=new Array();
+ 
+while (y!=0)
+{
+y=parseInt(x/2);
+tablica[i]=parseInt(x%2);
+i++;
+x=y;
+}
+ 
+for(z=i-1;z>0;z--)
+document.write(tablica[z]);
+ 
+</script>
+	
+	</body>
+	</html>
